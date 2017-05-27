@@ -1,0 +1,37 @@
+{
+  "name": "ax5core",
+  "version": "1.4.59",
+  "authors": [
+    "ThomasJ <tom@axisj.com>"
+  ],
+  "description": "`ax5core` is a collection of utility functions that have been designed for use in ax5ui",
+  "main": "dist/ax5core.js",
+  "keywords": [
+    "bootstrap",
+    "jquery",
+    "ax5ui",
+    "plugin",
+    "bootstrap jQuery plugins",
+    "ax5core",
+    "javascript ui"
+  ],
+  "dependencies": {
+    "jquery": ""
+  },
+  "devDependencies": {
+    "bootstrap-sass": "",
+    "bourbon": ""
+  },
+  "license": "MIT",
+  "homepage": "ax5.io",
+  "_release": "1.4.59",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.4.59",
+    "commit": "f29a6a7a0f11baa41a4c4a813f90dcb412371ec2"
+  },
+  "_source": "https://github.com/ax5ui/ax5core.git",
+  "_target": "^1.4.59",
+  "_originalSource": "ax5core",
+  "_direct": true
+}

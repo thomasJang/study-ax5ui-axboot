@@ -1,0 +1,20 @@
+
+$app-logo-width: 100px !default;
+$app-logo-height: 40px !default;
+
+@mixin my-box($width: 100px, $height: $width){
+    display: block;
+    width: $width;
+    height: $height;
+}
+
+body{
+    .app-header{
+        max-width: 100%;
+        .app-header-logo{
+            @include my-box($app-logo-width, $app-logo-height);
+        }
+    }
+}
+
+

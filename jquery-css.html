@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQuery 사용법</title>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+
+<a id="my-target" data-href="http://ax5.io">AX5UI</a>
+
+<script>
+    $(function () {
+        var $myTarget = $("#my-target");
+        $myTarget.click(function () {
+            $myTarget.css({
+                display: "block",
+                width: 300,
+                height: 300,
+                background: "#000",
+                color: "#fff"
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

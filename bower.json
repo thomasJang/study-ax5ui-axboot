@@ -1,0 +1,26 @@
+{
+  "name": "study-ax5ui-axboot",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Thomas Jang <tom@axisj.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ax5core": "^1.4.59",
+    "ax5ui-mask": "^1.4.60",
+    "bootstrap-sass": "^3.3.7",
+    "bootstrap": "^3.3.7",
+    "ax5ui-dialog": "^1.4.60",
+    "ax5ui-toast": "^1.4.60",
+    "ax5ui-grid": "^1.4.63"
+  }
+}

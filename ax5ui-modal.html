@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ax5core</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/ax5core/dist/ax5core.min.js"></script>
+
+    <link rel="stylesheet" href="bower_components/ax5ui-modal/dist/ax5modal.css"/>
+    <script src="bower_components/ax5ui-modal/dist/ax5modal.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center" style="padding-top: 100px;">
+            <button class="btn btn-danger btn-lg" data-btn-action="iframe-modal-open">iframe Modal open</button>
+            <button class="btn btn-danger btn-lg" data-btn-action="modal-close-open">Modal close & open</button>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var modal = new ax5.ui.modal({
+        //absolute: true,
+        zIndex: 5000,
+        iframeLoadingMsg: '<i class="fa fa-spinner fa-5x fa-spin" aria-hidden="true"></i>',
+        header: {
+            title: "MODAL TITLE"
+        }
+    });
+
+    $(function () {
+
+        $('[data-btn-action="iframe-modal-open"]').click(function () {
+            modal.close();
+            modal.open({
+                width: 800,
+                height: 600,
+                fullScreen: function () {
+                    return ($(window).width() < 600);
+                },
+                iframe: {
+                    method: "get",
+                    url: "modal-content.html",
+                    param: "callback=modalCallback"
+                }
+            });
+        });
+
+        $('[data-btn-action="modal-close-open"]').click(function () {
+            modal.close();
+            modal.open({
+                position: {
+                    left: "center",
+                    top: "middle",
+                    margin: 10
+                },
+                width: 800,
+                height: 600,
+                disableDrag: false,
+                fullScreen: function () {
+                    return ($(window).width() < 600);
+                }
+            }, function () {
+                this.$["body-frame"].append('<h1>div contents</h1>');
+            });
+        });
+
+    });
+
+    
+</script>
+
+</body>
+</html>

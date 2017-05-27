@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ax5core</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/ax5core/dist/ax5core.min.js"></script>
+
+    <link rel="stylesheet" href="bower_components/ax5ui-dialog/dist/ax5dialog.css"/>
+    <script src="bower_components/ax5ui-dialog/dist/ax5dialog.min.js"></script>
+    <link rel="stylesheet" href="bower_components/ax5ui-toast/dist/ax5toast.css"/>
+    <script src="bower_components/ax5ui-toast/dist/ax5toast.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center" style="padding-top: 100px;">
+            <button class="btn btn-default" id="open-dialog">Dialog 열기</button>
+            <button class="btn btn-default" id="open-prompt">Prompt 열기</button>
+            <button class="btn btn-default" id="open-toast">Toast 열기</button>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+
+    var myDialog = new ax5.ui.dialog({
+        title: "AX5UI",
+        theme: "danger"
+    });
+
+    var myToast = new ax5.ui.toast({
+        theme: "danger"
+    });
+
+
+
+
+    $(function () {
+
+        $("#open-dialog").click(function () {
+            myDialog.alert("나는 Dialog 입니다");
+        });
+
+        $("#open-prompt").click(function () {
+            myDialog.prompt("나는 Dialog 입니다", function () {
+                myToast.confirm(this.value);
+            });
+        });
+
+        $("#open-toast").click(function () {
+            myToast.push({
+                icon: "ICON",
+                msg: "나는 Toast 입니다"
+            });
+            myToast.confirm("나는 Toast 입니다");
+        });
+    });
+
+    
+</script>
+
+</body>
+</html>

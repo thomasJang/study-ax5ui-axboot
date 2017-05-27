@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ax5core</title>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/ax5core/dist/ax5core.min.js"></script>
+</head>
+<body>
+
+<script>
+
+    var myArray = ["A", "X", "5"];
+    var findIndex = ax5.util.search(myArray, function () {
+        return this == "X";
+    });
+    console.log("findIndex : " + findIndex);
+    // findIndex : 1
+
+    findIndex = ax5.util.search(myArray, function () {
+        return this == "Z";
+    });
+    console.log("findIndex : " + findIndex);
+    // findIndex : -1
+
+
+    var str = ax5.util.setDigit(95, 5);
+    console.log(str);
+    // 00095
+
+    console.log(ax5.util.number(99999, {money:true}));
+
+    ax5.util.number(-99999, {abs: true, byte: true});
+
+    ax5.util.number(-99999.143879839, {abs: true, round: 3});
+
+    ax5.util.date("2017.04.01", {add: {d:10}});
+
+    ax5.util.date("2017.04.01", {add: {m:10}});
+
+    ax5.util.date("2017.04.01", {add: {y:1}, 'return': 'yyyy-MM-dd hh:mm:ss'});
+
+</script>
+
+</body>
+</html>

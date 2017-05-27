@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQuery 사용법</title>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+
+    <button type="button" data-action="NEW">NEW</button>
+    <button type="button" data-action="SAVE">SAVE</button>
+    <button type="button" data-action="EDIT">EDIT</button>
+    <button type="button" data-action="DEL">DEL</button>
+
+<script>
+    jQuery.fn.extend({
+        /**
+         * @method jQuery.clickToAction
+         * @param {Object} [caller] - Action의 this를 정해둘 경우 전달.
+         * @param {String} Attribute Name - 감지할 속성명
+         * @param {Object} Actions - 속성값으로 호출할 함수 오브젝트
+         * @returns {jQuery}
+         */
+        clickToAction: function () {
+            var caller = window,
+                attr = arguments[0],
+                actions = arguments[1];
+
+            if (arguments.length > 2) {
+                caller = arguments[0];
+                attr = arguments[1];
+                actions = arguments[2];
+            }
+
+            this.on("click", function () {
+                var attrName = this.getAttribute(attr);
+                if (attrName in actions) {
+                    actions[attrName].call(caller, this);
+                }
+            });
+
+            return this;
+        }
+    });
+
+    $(function () {
+
+        $('button').clickToAction("data-action", {
+            "NEW": function (el) {
+                console.log("NEW", el);
+            },
+            "SAVE": function (el) {
+                console.log("SAVE", el);
+            },
+            "EDIT": function (el) {
+                console.log("EDIT", el);
+            },
+            "DEL": function (el) {
+                console.log("EDIT", el);
+            }
+        });
+    });
+
+
+
+
+</script>
+
+</body>
+</html>
