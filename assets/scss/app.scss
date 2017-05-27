@@ -1,4 +1,6 @@
 
+$app-logo-width: 300px;
+
 $app-logo-width: 100px !default;
 $app-logo-height: 40px !default;
 
@@ -17,4 +19,101 @@ body{
     }
 }
 
+// bootstrap 가져오기
 
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+//
+//==
+$ax5grid-border: 1px solid #676767;
+$ax5grid-bg: #2A2A2A;
+$ax5grid-font-size: 12px;
+$ax5grid-column-border: 1px solid #676767;
+
+//== header
+$ax5grid-header-column-color: #79DBD7;
+$ax5grid-header-column-border: 1px solid #676767;
+$ax5grid-header-column-box-shadow: none;
+$ax5grid-header-column-bg-colors: (#444, #000);
+$ax5grid-header-column-hover-bg-colors: (#000, #000);
+$ax5grid-header-column-resizer-color: #BADC2D;
+$ax5grid-header-column-resizer-size: 4px;
+$ax5grid-header-sorter-size: 10px;
+$ax5grid-header-sorter-color: #BADC2D;
+
+//== aside
+$ax5grid-aside-border: 1px solid darken(#676767, 0%);
+$ax5grid-aside-bg: #3a3c40;
+$ax5grid-aside-column-shadow: inset 1px 1px 0px 0px #444;
+
+$ax5grid-frozen-line-border: 1px solid darken(#676767, 10%);
+
+//== footsum
+$ax5grid-footsum-bg: #3a3c40;
+$ax5grid-footsum-line-border: 1px solid darken(#676767, 10%);
+
+//== page
+$ax5grid-page-border: 1px solid #676767;
+$ax5grid-page-bg-colors: (#444, #000);
+$ax5grid-page-navigation-padding: 5px;
+$ax5grid-page-navigation-font-size: 12px;
+$ax5grid-page-navigation-btn-min-width: 20px;
+$ax5grid-page-navigation-btn-border: 0px none;
+$ax5grid-page-navigation-btn-border-radius: 5px;
+$ax5grid-page-navigation-btn-bg: transparent;
+$ax5grid-page-navigation-btn-font-size: 11px;
+$ax5grid-page-navigation-btn-color: #fff;
+$ax5grid-page-navigation-btn-hover-bg: #676767;
+$ax5grid-page-navigation-btn-hover-color: #fff;
+
+$ax5grid-page-status-font-size: 12px;
+$ax5grid-page-status-padding: 10px;
+$ax5grid-page-status-color: #222;
+
+//== scroll
+$ax5grid-scroll-track-border: 1px solid #676767;
+$ax5grid-scroll-track-bg: #3a3c40;
+$ax5grid-scroll-corner-bg: #676767;
+
+$ax5grid-scroll-bar-border-radius: 10px;
+$ax5grid-scroll-bar-border: 0px solid #fff;
+$ax5grid-scroll-bar-bg: #676767;
+$ax5grid-scroll-bar-hover-border: 0px solid #ccc;
+$ax5grid-scroll-bar-hover-bg: #bababa;
+
+//== body.row
+$ax5grid-row-bg-0: #3a3c40;
+$ax5grid-row-bg-1: #2A2A2A;
+$ax5grid-row-bg-2: #3a3c40;
+$ax5grid-row-bg-3: #2A2A2A;
+$ax5grid-row-hover-bg: lighten(#3a3c40, 5%);
+$ax5grid-row-grouping-bg: #ffffe7;
+$ax5grid-row-selected: lighten(#3a3c40, 10%);
+
+//== body.cell
+$ax5grid-cell-padding-row-selector: 5px;
+$ax5grid-cell-padding: 3px 5px;
+
+$ax5grid-cell-checkbox-border: 1px solid #676767;
+$ax5grid-cell-checkbox-border-radius: 3px;
+$ax5grid-cell-checkbox-bg-colors: (#3a3c40, #2A2A2A);
+$ax5grid-cell-checkbox-arrow-color: #BADC2D;
+
+$ax5grid-cell-focused-box-shadow: inset 0px 0px 1px 1px #BADC2D;
+$ax5grid-cell-focused-bg: lighten(#3a3c40, 15%);
+$ax5grid-cell-focused-color: #fff;
+
+$ax5grid-cell-selected-border-color: #676767;
+$ax5grid-cell-selected-bg: lighten(#BADC2D, 15%);
+$ax5grid-cell-selected-color: #000;
+
+//== resizer
+$ax5grid-resizer-color: #BADC2D;
+$ax5grid-resizer-size: 2px;
+
+@import "../../bower_components/ax5ui-grid/src/ax5grid";
+
+[data-ax5grid] {
+    color: #fff;
+}

@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var notify = require("gulp-notify");
 var plumber = require('gulp-plumber');
 
 function errorAlert(error) {
